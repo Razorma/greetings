@@ -1,22 +1,23 @@
 function greeting(){
+    let theLanguage = ''
     let name = '';
     function getName(passedName){
         name = passedName;
     }
     function greetName(){
-        return "Hello, " + name
+        return  name
+    }
+    function setLanguage(lang){
+        theLanguage = lang;
+    }
+    function getLanguage(){
+        return  theLanguage
     }
     return{
         getName,
         greetName,
+        setLanguage,
+        getLanguage,
     }
 }
-const greetButton = document.querySelector(".greetNameButton")
-const greetingElement = document.querySelector(".greeting");
-const greetNamePassed = document.querySelector(".name-area")
- 
-greetButton.addEventListener("click",function(){
-    greet.getName(greetNamePassed.value)
-    greetingElement.innerHTML = greet.greetName()
-    greetNamePassed.value = '';
-})
+

@@ -26,6 +26,10 @@
     margin-bottom: 40px;
     display: flex;
     align-items: flex-end;
+    background-color: blueviolet;
+    font-size: large;
+    font-weight: 1000px;
+    box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.75)
 }
 .name-input{
     display: block;
@@ -33,11 +37,21 @@
 .name-area{
     padding: 9px;
 }
+.langs{
+    margin-top: 20px;
+    display: flex;
+    gap: 25px;
+}
+.block{
+    display: flex;
+    flex-direction: column;
+} 
 .greetNameButton{
     margin-top: 5px;
     padding: 9px;
     background-color: springgreen;
     margin-left: 155px;
+    border-radius: 6px;
 }
 .greeting{
     margin-top: 20px;
