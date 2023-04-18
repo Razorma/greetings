@@ -11,9 +11,6 @@ function greeting(){
         greetName,
     }
 }
-const greet = greeting()
-greet.getName("mama")
-console.log(greet.greetName())
 const greetButton = document.querySelector(".greetNameButton")
 const greetingElement = document.querySelector(".greeting");
 const greetNamePassed = document.querySelector(".name-area")
