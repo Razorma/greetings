@@ -1,0 +1,44 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+.box{
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* margin-top: 50%; */
+    background-color: darkslategray;
+    color: aliceblue;
+    /* max-width: 350px; */
+    /* margin-left: 50%; */
+}
+.heading{
+    /* padding: 20px; */
+    border: 1px solid black;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: flex-end;
+}
+.name-input{
+    display: block;
+}
+.name-area{
+    padding: 9px;
+}
+.greetNameButton{
+    margin-top: 5px;
+    padding: 9px;
+    background-color: springgreen;
+    margin-left: 155px;
+}
+.greeting{
+    margin-top: 20px;
+}
