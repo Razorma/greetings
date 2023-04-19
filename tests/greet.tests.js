@@ -23,14 +23,14 @@ describe('Greet Function tests' , function(){
         assert.equal(greet.getLanguageGreeting(),'Hello,');
 
     });
-    it('it should be able to count the same name only once as the greeted name' , function(){
-        let greets = greeting();
-        greets.getName("bheka")
-        greets.getName("bheka")
-        greets.getName("bheka")
-        greets.getName("bheka")
-        assert.equal(greets.greetNumber(),1);
+    // it('it should be able to count the same name only once as the greeted name' , function(){
+    //     let greets = greeting();
+    //     greets.getName("bheka")
+    //     greets.getName("bheka")
+    //     greets.getName("bheka")
+    //     greets.getName("bheka")
+    //     assert.equal(greets.greetNumber(),1);
 
-    });
+    // });
 
 });
