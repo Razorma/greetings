@@ -1,7 +1,7 @@
 var namesGreeted = {};
-let greetingsCounter = 0;
+let counter = 0;
 function greeting(){
-    
+    let greetingsCounter = 0;
     let theLanguage = ''
     let name = '';
     

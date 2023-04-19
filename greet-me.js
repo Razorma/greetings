@@ -5,7 +5,8 @@ const greetingElement = document.querySelector(".outputName");
 const greetNamePassed = document.querySelector(".name-area")
 const numGreetings = document.querySelector(".numGreetings")
 const resetButton = document.querySelector('.resetNameButton');
-greetingsCounter = localStorage.getItem("value")
+counter = localStorage.getItem("value")
+greetingsCounter = counter || 0;
 numGreetings.innerHTML = greetingsCounter
 namesGreeted = JSON.parse(localStorage.getItem('namesGreeted')) || 0;
 greetButton.addEventListener("click",function(){
