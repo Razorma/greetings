@@ -1,9 +1,10 @@
 var namesGreeted = {};
+let greetingsCounter = 0;
 function greeting(){
     
     let theLanguage = ''
     let name = '';
-    let greetingsCounter = 0;
+    
     function getName(passedName){
         if (passedName.trim() !== '') {
             name = passedName.trim();

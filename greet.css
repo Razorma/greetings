@@ -56,6 +56,13 @@
     margin-left: 155px;
     border-radius: 6px;
 }
+.resetNameButton{
+    margin-top: 5px;
+    padding: 9px;
+    background-color: springgreen;
+    /* margin-left: 155px; */
+    border-radius: 6px;
+}
 .greeting{
     margin-top: 20px;
 }

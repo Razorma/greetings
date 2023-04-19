@@ -4,10 +4,11 @@ const outputGreeting = document.querySelector(".outputGreeting");
 const greetingElement = document.querySelector(".outputName");
 const greetNamePassed = document.querySelector(".name-area")
 const numGreetings = document.querySelector(".numGreetings")
-numGreetings.innerHTML = localStorage.getItem("value")
-
-
- greetButton.addEventListener("click",function(){
+const resetButton = document.querySelector('.resetNameButton');
+greetingsCounter = localStorage.getItem("value")
+numGreetings.innerHTML = greetingsCounter
+namesGreeted = JSON.parse(localStorage.getItem('namesGreeted')) || 0;
+greetButton.addEventListener("click",function(){
    
     
     const checkedLangBtn = document.querySelector("input[name='language']:checked");
@@ -17,8 +18,15 @@ numGreetings.innerHTML = localStorage.getItem("value")
         greet.setLanguageGreeting(checkedLangBtn.value);
         outputGreeting.innerHTML = greet.getLanguageGreeting()
         localStorage.setItem("value",greet.greetNumber())
+        localStorage.setItem('namesGreeted', JSON.stringify(greet.greetedNames()));
         numGreetings.innerHTML = localStorage.getItem("value")
 
     }
     greetNamePassed.value = '';
 })
+resetButton.addEventListener('click', function(){
+    localStorage.clear();
+    numGreetings.innerHTML = 0;
+    namesGreeted = {};
+    greetingsCounter = 0;
+});
