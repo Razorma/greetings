@@ -40,6 +40,12 @@ describe('Greet Function tests' , function(){
         assert.equal(greet.getLanguageGreeting(),'Hello, ');
 
     });
+    it('it should be able return an error message if name or language is not required' , function(){
+        let greet = greeting()
+        assert.equal(greet.error().nameMessage,"please enter Name");
+        assert.equal(greet.error().langMessage,"please enter language");
+
+    });
     
 
 });

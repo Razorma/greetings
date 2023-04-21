@@ -6,13 +6,13 @@ function greeting(){
     let theLanguage = ''
     let name = '';  
     function getName(passedName){
-        if (passedName.trim() !== '') {
-            name = passedName.trim();
-            if (namesGreeted[passedName] === undefined) {
+        if (passedName.trim().toLowerCase() !== '') {
+            name = passedName.trim() ;
+            if (namesGreeted[passedName.toLowerCase()] === undefined) {
               greetingsCounter++;
-              namesGreeted[passedName] = 0;
+              namesGreeted[passedName.toLowerCase()] = 0;
             }else{
-                namesGreeted[passedName] = passedName;
+                namesGreeted[passedName.toLowerCase()] = passedName.toLowerCase();
             }
           }
        
@@ -33,6 +33,13 @@ function greeting(){
     function getLanguageGreeting(){
         return  theLanguage
     }
+    function error(){
+        return{
+            nameMessage : "please enter Name",
+            langMessage : "please enter language",
+
+        }
+    }
     return{
         getName,
         greetName,
@@ -40,6 +47,7 @@ function greeting(){
         getLanguageGreeting,
         greetNumber,
         greetedNames,
+        error,
     }
 }
 

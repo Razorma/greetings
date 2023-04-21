@@ -6,10 +6,8 @@ const greetingElement = document.querySelector(".outputName");
 const greetNamePassed = document.querySelector(".name-area")
 const numGreetings = document.querySelector(".numGreetings")
 const message = document.querySelector(".message")
-const message2 = document.querySelector(".message")
+const message2 = document.querySelector(".message2")
 const resetButton = document.querySelector('.resetNameButton');
-const checkbox = document.querySelector('.language');
-
 const greetNameInput = document.querySelector('input[type="text"]');
 
 greetNameInput.addEventListener('keydown', function(press) {
@@ -21,14 +19,17 @@ greetNameInput.addEventListener('keydown', function(press) {
 
 
 
-
 greetingsCounter = localStorage.getItem("value")
 numGreetings.innerHTML = greetingsCounter
 namesGreeted = JSON.parse(localStorage.getItem('namesGreeted')) || {};
-greetButton.addEventListener("click",function(){
-   
+
+
+greetButton.addEventListener("click",function(){  
     if(greetNamePassed.value === ""){
-        message.innerHTML = "please enter Name"
+        message.innerHTML = greet.error().nameMessage;
+        setTimeout(function() {
+            message.innerHTML = '';
+        }, 2500)
     }else{
         message.innerHTML = ''
     }
@@ -44,14 +45,21 @@ greetButton.addEventListener("click",function(){
         numGreetings.innerHTML = localStorage.getItem("value")
 
     }else{
-        message2.innerHTML = "please enter language"
+        message2.innerHTML = greet.error().langMessage;
+        setTimeout(function() {
+            message2.innerHTML = '';
+        }, 2500)
     }
-    checkbox.checked = false;
+    
     greetNamePassed.value = '';
+    checkedLangBtn.checked = false;
 })
 resetButton.addEventListener('click', function(){
+    const checkedLangBtn = document.querySelector("input[name='language']:checked");
     localStorage.clear();
     numGreetings.innerHTML = 0;
     namesGreeted = {};
     greetingsCounter = 0;
+    greetNamePassed.value = '';
+    checkedLangBtn.checked = false;
 });
