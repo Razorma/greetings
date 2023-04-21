@@ -11,14 +11,11 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    /* margin-top: 50%; */
     background-color: darkslategray;
     color: aliceblue;
-    /* max-width: 350px; */
-    /* margin-left: 50%; */
+
 }
 .heading{
-    /* padding: 20px; */
     border: 1px solid black;
     align-items: center;
     justify-content: center;
@@ -49,20 +46,30 @@
     display: flex;
     flex-direction: column;
 } 
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .greetNameButton{
     margin-top: 5px;
     padding: 9px;
     background-color: springgreen;
-    margin-left: 155px;
     border-radius: 6px;
+    display: flex;
+    align-items: center;
 }
 .resetNameButton{
     margin-top: 5px;
     padding: 9px;
     background-color: springgreen;
-    /* margin-left: 155px; */
     border-radius: 6px;
+    align-items: center;
 }
 .greeting{
     margin-top: 20px;
+}
+.warning{
+    color: blueviolet;
+    font-size: large;
 }

@@ -1,16 +1,18 @@
+
 var namesGreeted = {};
-let greetingsCounter = 0;
+var greetingsCounter = 0;
 function greeting(){
     
     let theLanguage = ''
-    let name = '';
-    
+    let name = '';  
     function getName(passedName){
         if (passedName.trim() !== '') {
             name = passedName.trim();
             if (namesGreeted[passedName] === undefined) {
               greetingsCounter++;
               namesGreeted[passedName] = 0;
+            }else{
+                namesGreeted[passedName] = passedName;
             }
           }
        
@@ -21,11 +23,12 @@ function greeting(){
     function greetNumber(){
         return greetingsCounter
     }
+  
     function greetedNames(){
         return namesGreeted
     }
     function setLanguageGreeting(lang){
-        theLanguage = lang+",";
+        theLanguage = lang+", ";
     }
     function getLanguageGreeting(){
         return  theLanguage
@@ -39,5 +42,4 @@ function greeting(){
         greetedNames,
     }
 }
-
 
