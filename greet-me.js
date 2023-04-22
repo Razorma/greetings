@@ -11,12 +11,11 @@ const resetButton = document.querySelector('.resetNameButton');
 const greetNameInput = document.querySelector('input[type="text"]');
 
 greetNameInput.addEventListener('keydown', function(press) {
-  const letterRegex = /^[a-zA-Z]*$/;
+  const letterRegex = /^[a-zA-Z\s ]*$/;
   if (!letterRegex.test(press.key)) {
     press.preventDefault();
   }
 });
-
 
 
 greetingsCounter = localStorage.getItem("value")
@@ -41,9 +40,8 @@ greetButton.addEventListener("click",function(){
         outputGreeting.innerHTML = greet.getLanguageGreeting()
         localStorage.setItem("value",greet.greetNumber())
         localStorage.setItem('namesGreeted', JSON.stringify(greet.greetedNames()));
-        console.log(JSON.parse(localStorage.getItem('namesGreeted')))
         numGreetings.innerHTML = localStorage.getItem("value")
-
+        checkedLangBtn.checked = false;
     }else{
         message2.innerHTML = greet.error().langMessage;
         setTimeout(function() {
@@ -52,7 +50,7 @@ greetButton.addEventListener("click",function(){
     }
     
     greetNamePassed.value = '';
-    checkedLangBtn.checked = false;
+    
 })
 resetButton.addEventListener('click', function(){
     const checkedLangBtn = document.querySelector("input[name='language']:checked");
@@ -61,5 +59,7 @@ resetButton.addEventListener('click', function(){
     namesGreeted = {};
     greetingsCounter = 0;
     greetNamePassed.value = '';
-    checkedLangBtn.checked = false;
+    if(checkedLangBtn){
+        checkedLangBtn.checked = false;
+    }  
 });

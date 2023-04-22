@@ -64,6 +64,7 @@
     border-radius: 6px;
     display: flex;
     align-items: center;
+    min-width:85px;
 }
 .resetNameButton{
     margin-top: 5px;
@@ -71,6 +72,7 @@
     background-color: springgreen;
     border-radius: 6px;
     align-items: center;
+    min-width:85px;
 }
 .greeting{
     margin-top: 20px;
@@ -80,4 +82,7 @@
     margin-bottom: 15px;
     margin-top: 15px;
     font-size: small;
+}
+.greetNameButton:hover, .resetNameButton:hover{
+    background-color:rgb(0, 65, 32) ;
 }
