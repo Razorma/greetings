@@ -22,6 +22,11 @@ describe('Greet Function tests' , function(){
         assert.equal(greet.getLanguageGreeting() + greet.greetName(),'Hello, Bob');
 
     });
+    it('it should not greet you if anything other than latters is entered' , function(){
+        let greet = greeting()
+        greet.getName(',// ')
+        assert.equal(greet.greetName(),'');
+    });
     it('it should be able to greet you with Molo if isiXhosa is checked' , function(){
         let greet = greeting()
         greet.setLanguageGreeting('Molo')
@@ -40,7 +45,7 @@ describe('Greet Function tests' , function(){
         assert.equal(greet.getLanguageGreeting(),'Hello, ');
 
     });
-    it('it should be able return an error message if name or language is not required' , function(){
+    it('it should be able return an error message if name and language is not entered' , function(){
         let greet = greeting()
         assert.equal(greet.error().nameMessage,"please enter Name");
         assert.equal(greet.error().langMessage,"please enter language");
