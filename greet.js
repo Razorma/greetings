@@ -6,7 +6,7 @@ function greeting(){
     let theLanguage = ''
     let name = '';  
     function getName(passedName){
-        const letterRegex = /^[a-zA-Z\s]*$/
+        const letterRegex = /^[a-zA-Z ]*$/
         if (passedName.trim().toLowerCase() !== '' && letterRegex.test(passedName)) {
             name = passedName.trim() ;
             if (namesGreeted[passedName.toLowerCase()] === undefined) {

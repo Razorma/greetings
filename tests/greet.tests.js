@@ -29,18 +29,21 @@ describe('Greet Function tests' , function(){
     });
     it('it should be able to greet you with Molo if isiXhosa is checked' , function(){
         let greet = greeting()
+        greet.getName('Bob')
         greet.setLanguageGreeting('Molo')
         assert.equal(greet.getLanguageGreeting(),'Molo, ');
 
     });
     it('it should be able to greet you with Sawbona if isiZulu is checked' , function(){
         let greet = greeting()
+        greet.getName('Bob')
         greet.setLanguageGreeting('Sawbona')
         assert.equal(greet.getLanguageGreeting(),'Sawbona, ');
 
     });
     it('it should be able to greet you with Hello if English is checked' , function(){
         let greet = greeting()
+        greet.getName('Bob')
         greet.setLanguageGreeting('Hello')
         assert.equal(greet.getLanguageGreeting(),'Hello, ');
 
